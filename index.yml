@@ -1,0 +1,18 @@
+name: Send Email
+on: [push]
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Send email
+        uses: dawidd6/action-send-mail@master
+        env:
+          EMAIL_USERNAME: ${{ secrets.saul4nitelv@gmail.com }}
+          EMAIL_PASSWORD: ${{ secrets.Saul4Amongus }}
+          TO_EMAILS: 'Skyn21prime@gmail.com'
+          SUBJECT: 'Test Email from GitHub Actions'
+          BODY: 'This is a test email sent from GitHub Actions.'
